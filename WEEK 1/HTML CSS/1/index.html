@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | QR code component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    .main-container{
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      background-color: hsl(212, 45%, 89%);
+      height: 100vh;
+      font-family: 'Outfit';
+      overflow: hidden;
+    }
+    .container{
+      display: flex;
+      flex-direction: column;
+     justify-content: center;
+     background-color: hsl(0, 0%, 100%);
+     margin: 0  auto;
+     margin-top: 10%;
+     padding: 20px;
+     width: 280px;
+     height: 450px;
+     border-radius: 12px;
+     gap: 15px;
+     text-align: center;
+    
+
+    }
+    .container img{
+      height: 280px;
+    width: 280px;  
+    margin: 0 auto;
+    margin-top: -35px;
+    border-radius: 12px;
+
+   }
+   .attribution{
+    margin: 0 auto;
+
+   }
+   h4{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0 10px;
+   }
+   p{
+    font-size: 15px;
+    color: hsl(216, 15%, 48%);
+    padding: 0 15px;
+
+   }
+
+  </style>
+</head>
+<body>
+  <div class="main-container">
+  <div class="container">
+
+    <img src="./images/image-qr-code.png" alt="QR CODE"/>
+    
+    <h4>Improve your front-end skills by building projects</h4>
+    <p>Scan the QR code to visit Frontend Mentor and take your coding skills to the next level</p>
+  
+
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://github.com/IrunguRiba/QA-QE-FULLSTACK">Irungu Riba</a>
+  </div>
+</div>
+</body>
+</html>

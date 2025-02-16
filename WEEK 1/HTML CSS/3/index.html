@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8">
+    <title>Product Page</title>
+</head>
+<body>
+    <nav>
+        <div class="left">
+            <img src="../1/images/icon_left.png" alt="Logo">
+        </div>
+        <div class="middle">
+            <ul>
+                <li>Home</li>
+                <li>Shop</li>
+                <li>Contact</li>
+                <li>Help</li>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li><img src="../1/images/drop.png" alt="">Account</li>
+                <li><img src="../1/images/lock.png" alt="">3 items</li>
+                <li><img src="../1/images/profile.png" alt="Profile Image" class="profile-img"></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="left_container">
+          <div class="progress-bar">
+              <span class="step active">Account</span>
+              <span class="line"></span>
+              <span class="circle">&#10003;</span>
+              <span class="line"></span>
+              <span class="step">Shipping</span>
+              <span class="line"></span>
+              <span class="circle">&#10003;</span>
+              <span class="line"></span>
+              <span class="step">Payment</span>
+          </div>
+
+          <h4>Account Details</h4>
+          <div class="details">
+            <form class="details_form" action="index.html" method="post">
+              <label for="email">Email Address</label><br>
+              <input type="email" name="email" value=""><br>
+              <label for="password">Password</label><br>
+              <input type="password" name="password" value="">
+              <div class="btn1">
+                <label for="btn1">Register for account</label>
+                <input id="button1" type="submit" name="btn1" value="Login">
+              </div>
+              <hr>
+              <div class="btn2">
+                <label for="btn2">Cancel order</label>
+                <input id="button2"type="submit" name="btn1" value="Shipping details">
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+        <div class="right_container">
+          <p>Order Summary</p>
+          <div class="imgholder">
+            <img src="../1/images/image.png" alt="image">
+          </div>
+          <div class="description">
+            <div class="sony">
+              <p>Sony wireless Headphones</p>
+              <p>&#163;320.65 </p>
+            </div>
+            <div class="second_one">
+              <button type="button" name="button">-</button>
+              <p>1</p>
+              <button  type="button" name="button">+</button>
+            </div>
+          </div>
+          <p>Gift card/Discount Code</p>
+          <div class="apply">
+            <input type="text" name="details" value="">
+            <button type="button" name="button">Apply</button>
+          </div>
+          <div class="features">
+            <p>Subtotal</p>
+            <p>&#163;316.55</p>
+          </div>
+          <div class="features">
+            <p>Tax</p>
+            <p>&#163;3.45</p>
+          </div>
+          <div class="features">
+            <p>Shipping</p>
+            <p style="color:green;">Free</p>
+          </div>
+          <div class="features">
+            <div><p>Total</p></div>
+            <p>&#163;316.55</p>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+</body>
+</html>
