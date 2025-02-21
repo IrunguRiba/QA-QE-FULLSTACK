@@ -1,0 +1,29 @@
+{
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/IrunguRiba/DEV#readme",
+  "bugs": {
+    "url": "https://github.com/IrunguRiba/DEV/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IrunguRiba/DEV.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "prac.js",
+  "scripts": {
+      "start": "nodemon index.js"
+      
+
+
+
+  },
+  "dependencies": {
+    "chalk": "^5.4.1"
+  },
+  "devDependencies": {}
+}
