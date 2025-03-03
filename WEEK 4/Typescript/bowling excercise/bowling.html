@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bowling</title>
+    <style>
+body{
+    background:linear-gradient(to right, gray, black) ;
+  
+}
+#allButtons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+}
+button{
+    color:green; 
+    height: 100px; 
+    width: 100px; 
+    font-size: 50px;
+     font-weight: bolder;
+     border-radius: 20px;
+}
+#scoresBoard{
+    height: 200px;
+    width: 800px;
+    background-color: rgb(18, 18, 16);
+    margin-left: 350px;
+border-radius: 20px;
+margin-top: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 50px;
+color: aquamarine;
+}
+#allButtons  #spare{
+   margin-top: 100px;
+   margin-right: -150px;
+
+}
+#allButtons  #miss{
+   margin-top: 100px;
+   margin-left: -150px;
+
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  font-weight: 800;
+  color: whitesmoke;
+  
+}
+h1{
+    font-size: 30px;
+}
+.scrolling-text {
+  display: inline-block;
+  font-size: 16px;
+  white-space: nowrap;
+  animation: scroll-text 10s linear infinite;
+  letter-spacing: 15px;
+}
+
+@keyframes scroll-text {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="scoresBoard">
+    </div>
+    <br><br><br><br><br>
+    <div id="allButtons">
+    
+    <div>
+        <button id="spare" style="color:black;" >/</button>
+       
+    </div>
+    <div>
+        <button id="strike" style="color:red">X </button>
+        
+    </div>
+    <div>
+        <button id="miss" style="color:green">- </button>
+    </div>
+</div>
+<div><button id="play" style="height: 90px; width: 250px;
+  border-radius: 20px; display: flex; justify-content: center; align-items: center; margin-right: -150px;">Play</button></div>
+<footer>
+    <div class="scrolling-text">
+      <h1> / = Spare x = Strike - = Miss</h1>
+    </div>
+  </footer>
+  <script src="../TESTING/dist/bowling.js"></script>
+</body>
+</html
