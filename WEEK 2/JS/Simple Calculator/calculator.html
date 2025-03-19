@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+<style>
+    body{
+        display: flex;
+        justify-content:center;
+        background:linear-gradient(to right, rgb(118, 118, 149), rgb(191, 191, 130));
+        
+    }
+    .buttons{
+        background-color: transparent;
+        display: flex;
+        justify-content: space-around;
+        border-radius: 20px;
+        height: 400px;
+        margin-top: 60px;
+        box-shadow: 1px 1px 1px 2px solid rgb(205, 158, 158);
+
+    }
+    .buttons button{
+        height:70px;
+        width: 70px;
+        border-radius: 10px;
+        margin: 5px;
+        justify-content: center;
+        background-color: rgb(156, 185, 185);
+        font-size: 20px;
+        font-weight: 400;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        box-shadow: 1px 1px  1px 2px rgb(151, 109, 109);
+    }
+    .buttons button:hover{
+        border-radius: 10px;
+        transition: 20ms;
+        margin: 5px;
+        justify-content: center;
+        background-color: rgb(198, 211, 211);
+        opacity: 0.4;
+
+    }
+    .button .actionsButtons{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+</style>
+</head>
+<body>
+<div class="container" 
+style=" background:linear-gradient(to right, rgb(118, 118, 149), rgb(96, 96, 74)); border-radius: 20px;
+ height: 700px; width: 500px; justify-content: space-around;">
+<div id="display" style="background: linear-gradient(to right, rgb(204, 204, 208), rgb(121, 148, 121)); 
+height: 180px; width: 450px; 
+margin:25px; top: 5px; border-radius: 20px; display: flex; align-items: center; 
+justify-content: center; font-size: 400; font-size: 40px;
+ color: rgb(41, 12, 12); box-shadow: 12, 12, 0, 5, solid rgb(58, 58, 61);" onclick="Nothing()" id="BtnNothing" >0</div>
+
+<div class="buttons">
+    <div id="1-9Keys" style="justify-content: flex-start;">
+
+<div>
+<button 
+onclick="BtnOne()" id="BtnOne">1</button>
+<button onclick="BtnTwo()" id="BtnTwo">2</button>
+<button onclick="BtnThree()" id="BtnThree">3</button>
+<button onclick="BtnFour()" id="BtnFour">4</button>
+<button onclick="BtnFive()" id="BtnFive">5</button>
+<button onclick="Avgbtn()" id="Avgbtn">Avg</button>
+</div> 
+<div>
+
+<button onclick="BtnSix()" id="BtnSix">6</button>
+<button onclick="BtnSeven()" id="BtnSeven">7</button>
+<button onclick="BtnEight()" id="BtnEight">8</button>
+<button onclick="BtnNine()" id="BtnNine">9</button>
+<button onclick="BtnZero()" id="BtnZero">0</button>
+<button onclick="BtnMulti()" id="BtnMulti">*</button>
+</div>
+<div>
+</div>
+<div>
+<button onclick="BtnSqrt()" id="BtnSqrt">Sqrt</button>
+<button onclick="BtnSq()" id="BtnSq">sqr</button>
+<button onclick="BtnDivi()" id="BtnDivi">/</button>
+<button onclick="BtnMax()" id="BtnMax">Max</button> 
+<button onclick="Additionbtn()" id="Additionbtn" style="width:150px;">+</button>
+<div class="controls" style="display: flex; justify-content: space-around;">
+<button id="Enterbtn" style=" width: 130px;">ENTER</button>
+<button id="Resetbtn" style=" width: 130px" onclick="resetBtn()" id="resetBtn">RESET</button>
+<button id="Deletebtn" style="width: 130px;">DELETE</button>
+
+</div>
+</div> 
+<div>
+
+
+</div>
+</div>
+</div>
+</div> 
+<script>
+    document.getElementById("Enterbtn").addEventListener("click", calculateResult);
+    const headerElement = document.getElementById("display");
+    function calculateResult() {
+        try {
+            let result = eval(headerElement.innerHTML);  
+            headerElement.innerHTML = result;  
+        } catch (error) {
+            headerElement.innerHTML = "Error";  
+        }
+    }
+    function resetBtn() {
+   headerElement.innerHTML = '';
+    }
+    function BtnOne() {
+headerElement.innerHTML += '1';
+    }
+    function BtnTwo() {
+ headerElement.innerHTML += '2';
+    }
+    function BtnThree() {
+  headerElement.innerHTML += '3';
+    }
+    function BtnFour() {
+ headerElement.innerHTML += '4';
+    }
+    function BtnFive() {
+     headerElement.innerHTML += '5';
+    }
+    function BtnSix() {
+ headerElement.innerHTML += '6';
+    }
+    
+    function BtnSeven() {
+    headerElement.innerHTML += '7';
+    }
+    function BtnEight() {
+        headerElement.innerHTML+= '8';
+    }
+    function BtnNine() {
+        headerElement.innerHTML+= '9';
+    }
+    function BtnZero() {
+        headerElement.innerHTML+= '0';
+    }
+    
+  function BtnSqrt() {
+   headerElement.innerHTML += 'Sqrt';
+    }
+    
+  function BtnMax() {
+        headerElement.innerHTML += 'Max';
+    }
+    
+    function BtnSq() {
+        headerElement.innerHTML += 'Sq';
+    }
+function BtnDivi() {
+           headerElement.innerHTML +='/';
+    }
+        function Avgbtn() {
+     headerElement.innerHTML +='Avg';
+    }
+    function BtnMulti() {
+    headerElement.innerHTML += '*';
+    }
+    function Additionbtn() {
+        headerElement.innerHTML +=  '+';
+    }
+    function Deletebtn() {
+    let currentValue = headerElement.innerHTML;
+     if (currentValue.length > 0) {
+  headerElement.innerHTML = currentValue.slice(0, -1);  
+        }
+        return currentValue;
+    }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+# Node modules
+/node_modules/
+
+# Logs
+*.log
+logs/
+
+# Debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+/coverage/
+/.vscode/
+
+# Environment variable files
+.env
+.env.*  
+
+# npm package-lock files (if you're using Yarn or another package manager)
+package-lock.json
+
+# Vite build output
+/dist/
+
+# Vite cache
+/.vite/
+
+# Nodemon specific
+nodemon-debug.log
+nodemon.json
+
+# Build directories (if applicable)
+build/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE or editor files
+.idea/
+.vscode/
+*.sublime-workspace
+
+# Test coverage directories
+coverage/
+
+# SASS / CSS / Preprocessor files
+.sass-cache/
+*.scssc
+
+# Other
+*.tgz
