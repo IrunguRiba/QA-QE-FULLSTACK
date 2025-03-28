@@ -1,0 +1,341 @@
+/* Navigation Bar */
+/* Navigation Bar */
+.navbar {
+    background-color: #1da1f2;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    align-items: center;
+}
+
+/* Search Container */
+.search {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Space between label & dropdown */
+}
+
+/* Search Label */
+.search label {
+    font-size: 26px;
+    font-weight: bold;
+    color: rgb(222, 223, 214);
+    
+}
+
+/* Styled Dropdown */
+.search select {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.search select:hover {
+    background-color: #f0f8ff;
+}
+
+/* Focus Effect */
+.search select:focus {
+    border-color: #007acc;
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Remove default dropdown arrow in some browsers */
+.search select::-ms-expand {
+    display: none;
+}
+
+.search select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+/* Responsive Search */
+@media screen and (max-width: 768px) {
+    .search {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search select {
+        width: 100%;
+    }
+}
+
+/* Profile Header */
+.profile-header {
+    position: relative; /* Ensure profile image positions relative to this */
+    width: 100%;
+    height: 200px;
+    background-image: url("../assets/imageBackground.jpg"); 
+    background-size: cover;
+    background-position: center;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    position: absolute; /* Makes it overlap */
+    bottom: -50px; /* Adjust this value to control overlap */
+    left: 20px;
+    background-image: url("../assets/profilePic.png"); 
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Dynamic Profile Image with Angular */
+.profile-img[ngStyle] {
+    background-size: cover;
+    background-position: center;
+}
+
+/* User Info */
+.user-info {
+    padding: 60px 20px 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Posts & Comments Layout */
+.content {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.posts, .comments {
+    width: 45%;
+    margin-bottom: 20px;
+    background: #f5f8fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* List Styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+li:hover {
+    background: #e1ecf4;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .posts, .comments {
+        width: 90%;
+    }
+
+    .profile-img {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Targeting the icons within the engagement section */
+.engagement i {
+    font-size: 18px; /* Make icons a bit larger for better visibility */
+    color: #555; /* Default color for icons */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin-right: 10px; /* Adds some space between the icons */
+  }
+  
+  /* Color specific to each icon */
+  .engagement .fa-comment {
+    color: #1DA1F2; /* Twitter Blue for comment icon */
+  }
+  
+  .engagement .fa-retweet {
+    color: #00A400; /* Green for retweet icon */
+  }
+  
+  .engagement .fa-heart {
+    color: #E0245E; /* Red for like (heart) icon */
+  }
+  
+  /* Hover effect to scale and change color */
+  .engagement i:hover {
+    transform: scale(1.2); /* Slightly increase the size of the icon */
+  }
+  
+  /* Add a pulse animation to the icons */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0.7;
+    }
+  }
+  
+  /* Apply pulse animation on the icons */
+  .engagement i:active {
+    animation: pulse 0.5s ease-in-out infinite;
+  }
+  
+  /* Additional engagement styles for gap and layout */
+  .engagement {
+    display: flex;
+    gap: 15px; /* Space between icons */
+    align-items: center;
+    margin-top: 10px
+  }  
+  /* Profile image styles */
+.user-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid #ddd;
+  }
+  
+  /* Verification Badge Styling */
+  .verification-badge {
+    color: #1DA1F2; /* Twitter's blue color */
+    font-size: 16px;
+    margin-left: 5px;
+    vertical-align: middle; /* Aligns the badge with the name */
+  }
+  
+  /* For the posts section */
+  .post .user-img {
+    width: 90px;
+    height: 90px;
+    margin-right: 20px;
+  }
+  
+  /* For the comments section */
+  .comment .user-img {
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+  }
+  
+  /* Post content and comment content */
+  .post-content, .comment-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Engagement styling */
+  .engagement {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    background-color: #1da1f2;
+    padding: 10px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar h1 {
+    margin: 0;
+  }
+  
+  .search label {
+    font-size: 16px;
+  }
+  
+  .search select {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+  }
+  
+  /* Content Styling */
+  .content {
+    padding: 20px;
+  }
+  
+  /* Posts section header */
+  .posts h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  /* Individual post styling */
+  .post {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+  }
+  
+  /* User info section */
+  .user-info h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  .user-info p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .user-info i {
+    color: #1da1f2;
+  }
+  
+  .profile-header {
+    background-color: #f5f8fa;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Comment section styling */
+  .comments h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .comment {
+    display: flex;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+  }
+  

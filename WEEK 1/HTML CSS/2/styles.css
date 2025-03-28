@@ -1,0 +1,78 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+body{
+background-color: #D9E4F5;
+}
+.main{
+    background-color: #c1d3f0;
+     width: 400px; 
+    height:550px;
+     justify-content: center;
+      margin-left: 600px;
+      margin-top: 100px;
+       justify-items: center;
+       border-radius: 20px;
+       box-shadow: -1px 1px 5px 9px #c2d4ec;
+}
+.container{
+   justify-items: center;
+   padding-top: 180px;
+ 
+       
+}
+.btn{
+    background-color: white;
+    margin-top: 50px;
+    height: 50px;
+    width: 200px;
+    border-radius:30px;
+    box-shadow: white;
+    border: none;
+    transition: 1s;
+
+}
+.btn:hover{
+    background-color: wheat;
+    margin-top: 50px;
+    height: 40px;
+    width: 170px;
+    border-radius:20px;
+    box-shadow: white;
+    border: none;
+    cursor:pointer;
+    transition: 1s;
+
+}
+
+img{
+    height: 25px;
+    width: 25px;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+
+}
+img:hover{
+    height: 35px;
+    width: 35px;
+    transition:1s;
+    cursor: pointer;
+}
+img:first-child{
+    height: 110px;
+    width: 110px;
+    margin-top: -100px;
+}
+h1{
+    font-size: 40px;
+    font-family:'Times New Roman', Times, serif;
+  
+
+
+}
+h4{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+  
+}
+

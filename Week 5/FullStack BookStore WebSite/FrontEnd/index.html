@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        body {
+            background: linear-gradient(to left, rgb(35, 39, 24), rgb(152, 197, 152));
+        }
+
+        button {
+            font-size: 20px;
+            color: black;
+            background-color: transparent;
+        }
+
+        button:hover {
+            opacity: 0.5;
+            cursor: grab;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height: 100px;
+            border-radius: 20px;
+        }
+
+        #bookstore {
+            font-size: 30px;
+            border-radius: 20px;
+            height: 50px;
+            border: 0px;
+            font-weight: bolder;
+            font-style: oblique;
+            font-family: Garamond;
+        }
+
+        #bookstore:hover {
+            cursor: grab;
+            border: 3px;
+            opacity: 0.5;
+        }
+
+        #container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10px 10px;
+            margin: 10px;
+
+        }
+
+        .bookContainer {
+            width: calc(33.33% - 25px);
+            box-sizing: border-box;
+            border: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding: 20px 10px;
+            font-weight: bold;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .bookContainer:hover {
+            transform: scaleX(1.03);
+            transition: 150ms ease-in-out;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .bookContainer button {
+            background-color: rgb(63, 86, 135);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            box-shadow: 0 0 10px rgba(43, 52, 151, 0.5);
+            border-radius: 10px;
+
+        }
+
+        .bookContainer button:hover {
+            transform: scale(1.08);
+            transition: 500ms;
+
+        }
+
+        .bookContainer img {
+            height: 250px;
+            width: 350px;
+            border-radius: 10px;
+        }
+
+        .bookContainer p:first-child {
+            font-style: italic;
+        }
+
+        .paymentModule {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: rgb(168, 171, 147);
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            z-index: 1000;
+            font-weight: bold;
+            color: rgb(17, 16, 16);
+            justify-content: space-between;
+            border-radius: 20px;
+           
+        }
+
+        .quantityControl {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+          
+        }
+
+        .quantityControl button {
+            padding: 5px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        .confirmPurchase{
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(6, 41, 23);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            margin:20px;
+            width: 150px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .closeButton {
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: rgb(9, 43, 12);
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            width: 250px;
+            transition: 500ms;
+            color: white;
+        }
+
+        .closeButton:hover {
+            background-color: #090835;
+            transition: 500ms;
+        }
+       .paymentMethod{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+       }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div style="display: flex; justify-content: space-between; gap:20px; align-items: center;">
+            <button id="bookstore">~ The Vintage Shelf</button>
+        </div>
+        <div style="display: flex; justify-content: space-between; gap:20px; align-items: center;">
+            <select name="BookByYear" id="BookByYear"
+                style=" width:150px; height:40px; 
+        border-radius: 20px; border: 0px; background: linear-gradient(to left, rgb(108, 128, 50), rgb(142, 172, 142)); font-size: 20px;">
+                <option style="font-size: 20px;">Genre</option>
+                <option style="font-size: 20px;" id="bookByGenre">Dystopian</option>
+                <option style="font-size: 20px;" id="bookByYear">Fantasy</option>
+                <option style="font-size: 20px;" id="bookByGenre">Fiction</option>
+                <option style="font-size: 20px;" id="bookByGenre">Oldest Book</option>
+                <option style="font-size: 20px;" id="bookByGenre">Newest Book</option>
+                <option style="font-size: 20px;" id="bookByGenre">17th Century</option>
+                <option style="font-size: 20px;" id="bookByGenre">18th Century</option>
+                <option style="font-size: 20px;" id="bookByGenre">19th Century</option>
+                <option style="font-size: 20px;" id="bookByGenre">20th Century</option>
+                <option style="font-size: 20px;" id="bookByGenre">Most Affordable</option>
+                <option style="font-size: 20px;" id="bookByGenre">A-Z</option>
+
+                
+            </select>
+        </div>
+            <input type="text" style="height: 30px; width:200px; 
+            border-radius: 20px; border: 0px; font-size: 20px; 
+            background-color: #b2c8c9;" placeholder="Title/Description">
+            <button style="background-color: rgb(107, 112, 124);height: 30px; width:140px; border-radius: 20px; border: 0px; margin-right:170px;" id="search">Search</button>
+        </div>
+
+    </header>
+
+    <div id="container"></div>
+    <script src="../FrontEnd/src/index.js"></script>
+
+    <footer>
+<marquee behavior="" direction="" style="height: 50px; 
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+color: rgb(16, 17, 16); font-size: larger; font-style: oblique;">
+    Best Seller Now Available!!! 
+</marquee>
+
+    </footer>
+</body>
+
+</html>

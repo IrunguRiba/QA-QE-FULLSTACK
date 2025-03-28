@@ -1,0 +1,64 @@
+<head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Twitter Clone</h1>
+    <div class="search">
+      <label for="userSelect">Search</label>
+      <select id="userSelect" (change)="onUserChange($event)">
+        <option *ngFor="let user of users" [value]="user.id">
+          {{ user.name }}
+        </option>
+      </select>
+    </div>
+  </nav>
+
+  <div class="profile-header">
+    <div class="profile-img"></div>
+  </div>
+
+  <div class="user-info" *ngIf="selectedUser">
+    <h2>{{ selectedUser?.name }}</h2>
+    <p>{{ '@' + selectedUser?.username }}</p>
+    <p>{{ selectedUser?.website }}</p>
+    <p>{{ selectedUser?.company?.name }}</p>
+    <p><i class="fas fa-map-marker-alt"></i> {{ selectedUser?.address?.city }}</p>
+  </div>
+
+  <div class="content">
+    <div class="posts">
+      <h3>Posts</h3>
+      <div class="post" *ngFor="let post of posts" (click)="loadPostComments(post.id)">
+        <!-- Replace the profile image with a dog image -->
+        <img class="user-img" src="https://placedog.net/150" alt="Dog">
+        <div class="post-content">
+          <h4>{{ selectedUser?.name }} <span class="verification-badge"><i class="fas fa-check-circle"></i></span></h4>
+          <p>{{ post.body }}</p>
+          <div class="engagement">
+            <span><i class="fas fa-comment"></i> {{ selectedPostId === post.id ? comments.length : 0 }}</span>
+            <span><i class="fas fa-retweet"></i> 200</span>
+            <span><i class="fas fa-heart"></i> 200</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comments">
+      <h3>Post {{ selectedPostId ? comments.length : 0 }} Comments</h3>
+      <div class="comment" *ngFor="let comment of comments">
+        <!-- Replace the profile image with a dog image -->
+        <img class="user-img" src="https://placedog.net/150" alt="Dog">
+        <div class="comment-content">
+          <h4>{{ comment.name }} <span class="verification-badge"><i class="fas fa-check-circle"></i></span></h4>
+          <p>{{ comment.body }}</p>
+          <div class="engagement">
+            <span><i class="fas fa-comment"></i> 0</span>
+            <span><i class="fas fa-retweet"></i> 0</span>
+            <span><i class="fas fa-heart"></i> 0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

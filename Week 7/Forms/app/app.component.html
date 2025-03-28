@@ -1,0 +1,60 @@
+<h2>Registation Form</h2>
+
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input type="text" id="firstName" class="form-control" formControlName="firstName" placeholder="First Name">
+  </div>
+  <div class="text-danger" *ngIf="form.controls['firstName'].touched && form.controls['firstName'].invalid"> 
+    First Name is required.
+  </div>
+
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" id="lastName" class="form-control" formControlName="lastName" placeholder="Last Name">
+  </div>
+  <div class="text-danger" *ngIf="form.controls['lastName'].touched && form.controls['lastName'].invalid">
+    <span *ngIf="form.controls['lastName'].errors?.['required']">Last Name is required.</span>
+    <span *ngIf="form.controls['lastName'].errors?.['minlength']">Last Name must be at least 6 characters long.</span>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email">
+  </div>
+  <div class="text-danger" *ngIf="form.controls['email'].touched && form.controls['email'].invalid"> 
+    <span *ngIf="form.controls['email'].errors?.['required']">Email is required.</span>
+    <span *ngIf="form.controls['email'].errors?.['email']">Please enter a valid email.</span>
+  </div>
+
+  <div class="form-group">
+    <label for="userName">Username</label>
+    <input type="text" id="userName" class="form-control" formControlName="userName" placeholder="User Name (Any)">
+  </div>
+  <div class="text-danger" *ngIf="form.controls['userName'].touched && form.controls['userName'].invalid"> 
+    Username is required.
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="city">City</label>
+      <input type="text" id="city" class="form-control" formControlName="city" placeholder="Current City">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="county">County</label>
+      <input type="text" id="county" class="form-control" formControlName="state" placeholder="Current County">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="postalCode">Postal Code</label>
+      <input type="text" id="postalCode" class="form-control" formControlName="zipCode" placeholder="Zip Code is Optional">
+    </div>
+  </div>
+
+  <div class="form-group form-check">
+    <input type="checkbox" id="isAgree" class="form-check-input" formControlName="isAgree">
+    <label class="form-check-label" for="isAgree">I agree to terms and conditions</label>
+  </div>
+
+  <button type="submit" class="btn" [disabled]="!form.valid">Submit</button>
+</form>
